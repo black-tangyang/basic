@@ -47,10 +47,10 @@ $config = [
         ],
         */
     ],
-    'aliases' => [
+    /*'aliases' => [
         '@common' => dirname(__FILE__).'/../common',
         '@tang' => 'http://www.example.com',
-    ],
+    ],*///别名路径的定义
     'params' => $params,
 ];
 

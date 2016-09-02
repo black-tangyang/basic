@@ -6,7 +6,7 @@
  * Date: 2016/9/2
  * Time: 11:42
  */
-namespace common;
+namespace app\common;
 
 class CommonFunction
 {
