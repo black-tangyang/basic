@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\YiiModel;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -60,7 +61,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model =  new YiiModel();
+        $result = $model->find()->asArray()->all();
+        var_dump($result);
+        //return $this->render('index');
     }
 
     /**
