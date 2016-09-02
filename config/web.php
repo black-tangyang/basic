@@ -46,6 +46,10 @@ $config = [
             ],
         ],
         */
+        'aliases' => [
+            '@yang' => '/path/to/foo',
+            '@tang' => 'http://www.example.com',
+        ],
     ],
     'params' => $params,
 ];

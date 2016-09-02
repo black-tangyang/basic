@@ -64,6 +64,8 @@ class SiteController extends Controller
         $model =  new YiiModel();
         $result = $model->find()->asArray()->all();
         var_dump($result);
+        echo "<pre>";
+        echo Yii::getAlias('@yang');
         //return $this->render('index');
     }
 
