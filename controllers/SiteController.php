@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use common\CommonFunction;
 
 class SiteController extends Controller
 {
@@ -65,7 +66,9 @@ class SiteController extends Controller
         $result = $model->find()->asArray()->all();
         var_dump($result);
         echo "<pre>";
-        echo Yii::getAlias('@yang');
+        echo Yii::getAlias('@common');
+        echo "<pre>";
+        CommonFunction::test();
         //return $this->render('index');
     }
 

@@ -48,7 +48,7 @@ $config = [
         */
     ],
     'aliases' => [
-        '@yang' => dirname(__FILE__),
+        '@common' => dirname(__FILE__).'/../common',
         '@tang' => 'http://www.example.com',
     ],
     'params' => $params,
