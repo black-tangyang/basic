@@ -13,7 +13,7 @@ use Yii;
 use yii\base\Action;
 use yii\base\ActionFilter;
 
-class TestFilter  extends ActionFilter
+class TestFilter extends ActionFilter
 {
     //在action之前运行，可用来过滤输入
     public function beforeAction($action) {
