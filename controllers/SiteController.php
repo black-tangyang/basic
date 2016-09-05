@@ -66,7 +66,7 @@ class SiteController extends Controller
         $result = $model->find()->asArray()->all();
         var_dump($result);
         echo "<pre>";
-      
+
         CommonFunction::test();
         //return $this->render('index');
     }

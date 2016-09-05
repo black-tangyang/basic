@@ -17,4 +17,13 @@ class YiiModel extends ActiveRecord
         return 'user';
     }
 
+    public function behavior(){
+        return [
+            'mybehavior' => [
+                'class' => 'app\behavior\MyBehavior',
+                'test' => 'one',
+            ],
+        ];
+    }
+
 }
