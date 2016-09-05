@@ -63,9 +63,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $component = new MyBehavior();
+        $component->attachBehavior();
         $model =  new YiiModel();
         $model->user_name = 'hong';
-        $result = $model->behavior()->save();
+        $result = $model->save();
         var_dump($result);
         echo "<pre>";
 
