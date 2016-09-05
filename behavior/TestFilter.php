@@ -21,6 +21,7 @@ class TestFilter extends ActionFilter
     public function beforeAction($action) {
         var_dump($this->rules);
         echo '在调用action前显示<br/>';
+        exit;
         return TRUE;//如果返回值为false,则action不会运行
     }
     //在action之后运行，可用来过滤输出
