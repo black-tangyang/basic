@@ -17,12 +17,12 @@ class MyBehavior extends Behavior
 {
     public $test;
 
-    public function events(){
+    /*public function events(){
         return [
             ActiveRecord::EVENT_BEFORE_INSERT => 'before_insert',
             ActiveRecord::EVENT_BEFORE_UPDATE => 'before_update',
         ];
-    }
+    }*/
 
     public function before_insert(){
         echo 'insert';
