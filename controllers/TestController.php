@@ -18,6 +18,13 @@ class TestController extends Controller
             'test' => [
                 'class' => 'app\behavior\TestFilter',//调用过滤器
                 'only' => ['filter'],
+                'rules' => [
+                    // 允许认证用户
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ]
             ]
         ];
     }
