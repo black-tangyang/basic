@@ -16,7 +16,8 @@ class TestController extends Controller
     public function behaviors() {
         return [
             'test' => [
-                'class' => 'app\behavior\TestFilter'//调用过滤器
+                'class' => 'app\behavior\TestFilter',//调用过滤器
+                'only' => ['test'],
             ]
         ];
     }
