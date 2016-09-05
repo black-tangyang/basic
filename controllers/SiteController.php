@@ -63,11 +63,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model =  new YiiModel();
-        $result = $model->find()->asArray()->all();
+        $model->name = 'hong';
+        $result = $model->save();
         var_dump($result);
         echo "<pre>";
 
-        CommonFunction::test();
+        //CommonFunction::test();
         //return $this->render('index');
     }
 
