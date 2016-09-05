@@ -22,10 +22,10 @@ class TestController extends Controller
                     // 允许认证用户
                     [
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['?'],
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
     public function actionFilter() {
