@@ -11,6 +11,7 @@ namespace app\behavior;
 
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
+use yii\base\Model;
 
 class MyBehavior extends Behavior
 {

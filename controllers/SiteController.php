@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\common\CommonFunction;
+use app\behavior\MyBehavior;
 
 class SiteController extends Controller
 {
