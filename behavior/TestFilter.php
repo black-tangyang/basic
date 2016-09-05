@@ -15,8 +15,11 @@ use yii\base\ActionFilter;
 
 class TestFilter extends ActionFilter
 {
+    public $rules;
+
     //在action之前运行，可用来过滤输入
     public function beforeAction($action) {
+        var_dump($this->rules);
         echo '在调用action前显示<br/>';
         return TRUE;//如果返回值为false,则action不会运行
     }
