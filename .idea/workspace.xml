@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="641d3f3f-4a61-48cd-8b56-f848ee99795b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/behavior/MyBehavior.php" afterPath="$PROJECT_DIR$/behavior/MyBehavior.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/YiiModel.php" afterPath="$PROJECT_DIR$/models/YiiModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SiteController.php" afterPath="$PROJECT_DIR$/controllers/SiteController.php" />
     </list>
     <ignored path="basic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.0">
-              <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.39355582">
+              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
               <folding>
                 <element signature="e#35#59#0#PHP" expanded="true" />
               </folding>
@@ -50,8 +49,8 @@
       <file leaf-file-name="MyBehavior.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/behavior/MyBehavior.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.333333">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="4" selection-end-line="24" selection-end-column="7" />
+            <state vertical-scroll-proportion="-12.0">
+              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding>
                 <element signature="e#109#131#0#PHP" expanded="true" />
               </folding>
@@ -59,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YiiModel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="YiiModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/YiiModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43498275">
+            <state vertical-scroll-proportion="-14.0">
               <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding>
                 <element signature="e#108#136#0#PHP" expanded="true" />
@@ -83,9 +82,9 @@
         <option value="$PROJECT_DIR$/config/params.php" />
         <option value="$PROJECT_DIR$/common/CommonFunction.php" />
         <option value="$PROJECT_DIR$/config/web.php" />
-        <option value="$PROJECT_DIR$/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/behavior/MyBehavior.php" />
         <option value="$PROJECT_DIR$/models/YiiModel.php" />
+        <option value="$PROJECT_DIR$/controllers/SiteController.php" />
       </list>
     </option>
   </component>
@@ -425,32 +424,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
+    <entry file="file://$PROJECT_DIR$/models/YiiModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0">
-          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+        <state vertical-scroll-proportion="-14.0">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding>
-            <element signature="e#35#59#0#PHP" expanded="true" />
+            <element signature="e#108#136#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/behavior/MyBehavior.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.333333">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="4" selection-end-line="24" selection-end-column="7" />
+        <state vertical-scroll-proportion="-12.0">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
           <folding>
             <element signature="e#109#131#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/YiiModel.php">
+    <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43498275">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.39355582">
+          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
           <folding>
-            <element signature="e#108#136#0#PHP" expanded="true" />
+            <element signature="e#35#59#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
