@@ -64,7 +64,7 @@ class SiteController extends Controller
     {
         $model =  new YiiModel();
         $model->user_name = 'hong';
-        $result = $model->save();
+        $result = $model->behavior()->save();
         var_dump($result);
         echo "<pre>";
 
