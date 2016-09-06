@@ -66,7 +66,7 @@ class SiteController extends Controller
     {
 
         $redis = Yii::$app->redis;
-        $redis->set('test_yiibasic_kd',12321);
+        //$redis->set('test_yiibasic_kd',12321);
 
         $value = $redis->get('test_yiibasic_kd');
         var_dump($value);
