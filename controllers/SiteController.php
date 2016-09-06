@@ -64,6 +64,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        phpinfo();
+        exit;
+
         $redis = Yii::$app->redis;
         $redis->set('test_yiibasic_kd',12321);
 
