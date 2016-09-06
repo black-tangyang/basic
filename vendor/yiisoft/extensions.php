@@ -75,4 +75,22 @@ return array (
       '@yii/sphinx' => $vendorDir . '/yiisoft/yii2-sphinx',
     ),
   ),
+    'yiisoft/yii2-redis' =>
+        array (
+            'name' => 'yiisoft/yii2-redis',
+            'version' => '2.2.0.0',
+            'alias' =>
+                array (
+                    '@yii/redis' => $vendorDir . '/yiisoft/yii2-redis',
+                ),
+        ),
+    'yiisoft/yii2-curl' =>
+        array (
+            'name' => 'yiisoft/yii2-curl',
+            'version' => '2.2.0.0',
+            'alias' =>
+                array (
+                    '@yii/curl' => $vendorDir . '/yiisoft/yii2-curl',
+                ),
+        ),
 );
