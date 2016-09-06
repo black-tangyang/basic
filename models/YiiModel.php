@@ -18,7 +18,7 @@ class YiiModel extends ActiveRecord
         return 'user';
     }
 
-    public function behavior(){
+    public function behaviors(){
         return [
             'class' => MyBehavior::className(),
             'attributes' => [

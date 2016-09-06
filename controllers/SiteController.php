@@ -11,6 +11,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\common\CommonFunction;
 use app\behavior\MyBehavior;
+use yii\redis;
 
 class SiteController extends Controller
 {
@@ -63,6 +64,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $redis = Yii::$app->redis;
+        $redis->set('test_yiibasic_kd',12321);
+
+        $value = $redis->get('test_yiibasic_kd');
+        var_dump($value);
         $model =  new YiiModel();
         $model->user_name = 'hong';
         $result = $model->save();

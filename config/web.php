@@ -14,6 +14,24 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+
+            'hostname' => '10.10.31.134',
+            'port' => 6379,
+
+            'database' => 0 ,
+        ],
+        'session' => [
+            'class' => 'yii\redis\Session',
+            'keyPrefix' => 'yii_test_session_',
+            'redis' => [
+                'class' => 'yii\redis\Connection',
+                'hostname' => '10.10.31.134',
+                'port' => 6379,
+                'database' => 0 ,
+            ],
+        ],
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
