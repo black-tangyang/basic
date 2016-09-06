@@ -19,6 +19,7 @@ $config = [
             'hostname' => '121.43.56.53',
             'port' => 6379,
             'database' => 0 ,
+            'password' => 123456
         ],
         'session' => [
             'class' => 'yii\redis\Session',
@@ -28,6 +29,7 @@ $config = [
                 'hostname' => '121.43.56.53',
                 'port' => 6379,
                 'database' => 0 ,
+                'password' => 123456
             ],
         ],
         'user' => [
