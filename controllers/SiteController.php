@@ -70,6 +70,7 @@ class SiteController extends Controller
 
         $value = $redis->get('test_yiibasic_kd');
         var_dump($value);
+        exit;
         $model =  new YiiModel();
         $model->user_name = 'hong';
         $result = $model->save();
