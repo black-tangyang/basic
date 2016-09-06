@@ -16,10 +16,8 @@ $config = [
         ],
         'redis' => [
             'class' => 'yii\redis\Connection',
-
-            'hostname' => '10.10.31.134',
+            'hostname' => '121.43.56.53',
             'port' => 6379,
-
             'database' => 0 ,
         ],
         'session' => [
@@ -27,7 +25,7 @@ $config = [
             'keyPrefix' => 'yii_test_session_',
             'redis' => [
                 'class' => 'yii\redis\Connection',
-                'hostname' => '10.10.31.134',
+                'hostname' => '121.43.56.53',
                 'port' => 6379,
                 'database' => 0 ,
             ],
