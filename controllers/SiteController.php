@@ -64,20 +64,30 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
-        $redis = Yii::$app->redis;
-       /* if($redis->get('test_yiibasic_kdm') == NULL){
+        //直接存redis
+       /* $redis = Yii::$app->redis;
+        if($redis->get('test_yiibasic_kdm') == NULL){
             $redis->set('test_yiibasic_kdm','tangyang');
             $redis->expire('test_yiibasic_kdm',60);
-        };*/
+        };
         $value = $redis->get('test_yiibasic_kdm');
         var_dump($value);
+        exit;*/
+
+
+        //以session方式存redis
+        $session = Yii::$app->session;
+        var_dump($session->get('test_session_one'));
         exit;
-        $model =  new YiiModel();
+        $session->set('test_session_one','one');
+
+
+
+        /*$model =  new YiiModel();
         $model->user_name = 'hong';
         $result = $model->save();
         var_dump($result);
-        echo "<pre>";
+        echo "<pre>";*/
 
         //CommonFunction::test();
         //return $this->render('index');
