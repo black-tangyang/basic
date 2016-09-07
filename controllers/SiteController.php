@@ -77,9 +77,11 @@ class SiteController extends Controller
 
         //以session方式存redis
         $session = Yii::$app->session;
+        if($session->get('test_session_one') == NULL){
+            $session->set('test_session_one','one');
+        };
+
         var_dump($session->get('test_session_one'));
-        exit;
-        $session->set('test_session_one','one');
 
 
 
