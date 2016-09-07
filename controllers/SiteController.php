@@ -66,10 +66,10 @@ class SiteController extends Controller
     {
 
         $redis = Yii::$app->redis;
-        /*if($redis->get('test_yiibasic_kdm') == NULL){
+        if($redis->get('test_yiibasic_kdm') == NULL){
             $redis->set('test_yiibasic_kdm','tangyang');
-            $redis->expire('test_yiibasic_kdm',20);
-        };*/
+            $redis->expire('test_yiibasic_kdm',60);
+        };
         $value = $redis->get('test_yiibasic_kdm');
         var_dump($value);
         exit;
