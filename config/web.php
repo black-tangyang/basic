@@ -5,11 +5,11 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'catchAll' => [ // <-- here
+    /*'catchAll' => [ // <-- here
         'site/test',
-     /*   'param1' => 'value1',
-        'param2' => 'value2',*/
-    ],
+        'param1' => 'value1',
+        'param2' => 'value2',
+    ],*/
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
