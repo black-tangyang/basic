@@ -82,6 +82,7 @@ class SiteController extends Controller
         };*/
 
         var_dump($session->get('test_session_one'));
+        echo $_SESSION['test_session_one'];
 
 
 
