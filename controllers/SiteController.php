@@ -13,6 +13,7 @@ use app\common\CommonFunction;
 use app\behavior\MyBehavior;
 use yii\redis;
 use yii\helpers;
+use yii\bootstrap\BootstrapAsset;
 
 class SiteController extends Controller
 {
