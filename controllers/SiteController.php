@@ -64,7 +64,8 @@ class SiteController extends Controller
     }
 
 
-    public function actionTest(){
+    public function actionTest($id){
+        echo $id;
         echo 'test';
     }
 
