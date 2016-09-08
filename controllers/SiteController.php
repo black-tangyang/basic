@@ -12,6 +12,7 @@ use app\models\ContactForm;
 use app\common\CommonFunction;
 use app\behavior\MyBehavior;
 use yii\redis;
+use yii\helpers;
 
 class SiteController extends Controller
 {
@@ -45,7 +46,7 @@ class SiteController extends Controller
          unset($_SESSION['test_session_one']);
         var_dump($session->get('test_session_one'));*/
 
-        $url = \yii\helpers\Url::toRoute(['site/test']);
+        $url = yii\helpers\Url::toRoute(['site/test']);
         var_dump($url);
 
 
