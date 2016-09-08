@@ -46,6 +46,7 @@ class SiteController extends Controller
         var_dump($session->get('test_session_one'));*/
 
         $url = \yii\helpers\Url::toRoute(['site/test']);
+        var_dump($url);
 
 
         //---------------插入数据库
