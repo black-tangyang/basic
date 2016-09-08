@@ -15,47 +15,7 @@ use yii\redis;
 
 class SiteController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
 
-    /**
-     * @inheritdoc
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
-        ];
-    }
 
     /**
      * Displays homepage.
@@ -64,7 +24,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        //直接存redis
+        //--------------直接存redis
        /* $redis = Yii::$app->redis;
         if($redis->get('test_yiibasic_kdm') == NULL){
             $redis->set('test_yiibasic_kdm','tangyang');
@@ -75,23 +35,26 @@ class SiteController extends Controller
         exit;*/
 
 
-        //以session方式存redis
-        $session = Yii::$app->session;
-        /*if($session->get('test_session_one') == NULL){
+        //---------------以session方式存redis
+       /* $session = Yii::$app->session;
+        if($session->get('test_session_one') == NULL){
             $session->set('test_session_one','one');
-        };*/
+        };
 
         var_dump($session->get('test_session_one'));
          unset($_SESSION['test_session_one']);
-        var_dump($session->get('test_session_one'));
+        var_dump($session->get('test_session_one'));*/
+
+        $url = \yii\helpers\Url::toRoute(['site/test']);
 
 
-
+        //---------------插入数据库
         /*$model =  new YiiModel();
         $model->user_name = 'hong';
         $result = $model->save();
         var_dump($result);
         echo "<pre>";*/
+
 
         //CommonFunction::test();
         //return $this->render('index');
