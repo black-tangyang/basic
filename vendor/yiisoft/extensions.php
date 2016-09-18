@@ -95,7 +95,7 @@ return array (
         ),
     'yiisoft/yii2-phpexcel' =>
         array (
-            'name' => 'yii2-phpexcel',
+            'name' => 'yiisoft/yii2-phpexcel',
             'version' => '2.2.0.0',
             'alias' =>
                 array (
