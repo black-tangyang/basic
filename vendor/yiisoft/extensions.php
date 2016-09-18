@@ -93,4 +93,13 @@ return array (
                     '@yii/curl' => $vendorDir . '/yiisoft/yii2-curl',
                 ),
         ),
+    'yiisoft/yii2-phpexcel' =>
+        array (
+            'name' => 'yii2-phpexcel',
+            'version' => '2.2.0.0',
+            'alias' =>
+                array (
+                    '@yii/phpexcel' => $vendorDir . '/yiisoft/yii2-phpexcel',
+                ),
+        ),
 );
