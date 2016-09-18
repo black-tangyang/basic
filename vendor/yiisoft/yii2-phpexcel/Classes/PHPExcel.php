@@ -25,6 +25,7 @@
  * @version    ##VERSION##, ##DATE##
  */
 
+namespace yii\phpexcel;
 
 /** PHPExcel root directory */
 if (!defined('PHPEXCEL_ROOT')) {
