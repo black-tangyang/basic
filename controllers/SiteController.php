@@ -14,7 +14,6 @@ use app\behavior\MyBehavior;
 use yii\redis;
 use yii\helpers;
 use yii\bootstrap\BootstrapAsset;
-use yii\phpexcel\PHPExcel;
 
 class SiteController extends Controller
 {
@@ -66,7 +65,6 @@ class SiteController extends Controller
 
 
     public function actionTest(){
-        $PHPexcel = new PHPExcel();
         echo 'test';
     }
 
