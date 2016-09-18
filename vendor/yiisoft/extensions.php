@@ -99,7 +99,7 @@ return array (
             'version' => '2.2.0.0',
             'alias' =>
                 array (
-                    '@yii/phpexcel' => $vendorDir . '/yiisoft/yii2-phpexcel',
+                    '@yii/phpexcel' => $vendorDir . '/yiisoft/yii2-phpexcel/Classes',
                 ),
         ),
 );
