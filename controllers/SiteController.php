@@ -15,6 +15,9 @@ use yii\redis;
 use yii\helpers;
 use yii\bootstrap\BootstrapAsset;
 use PHPExcel;
+use PHPExcel_Reader_Excel2007;
+use PHPExcel_Reader_Excel5;
+
 
 class SiteController extends Controller
 {
@@ -66,9 +69,36 @@ class SiteController extends Controller
 
 
     public function actionTest(){
-        $phpexcel = new PHPExcel();
-        var_dump($phpexcel);
-        echo 'test';
+        $filePath = __DIR__."/test.xlsx"; // 要读取的文件的路径
+
+        $PHPExcel = new PHPExcel(); // 拿到实例，待会儿用
+
+        $PHPReader = new PHPExcel_Reader_Excel2007(); // Reader很关键，用来读excel文件
+
+        if (!$PHPReader->canRead($filePath)) { // 这里是用Reader尝试去读文件，07不行用05，05不行就报错。注意，这里的return是Yii框架的方式。
+            $PHPReader = new PHPExcel_Reader_Excel5();
+            if (!$PHPReader->canRead($filePath)) {
+                $errorMessage = "Can not read file.";
+                echo $errorMessage;
+            }
+        }
+
+        $PHPExcel = $PHPReader->load($filePath); // Reader读出来后，加载给Excel实例
+
+        $allSheet = $PHPExcel->getSheetCount(); // sheet数
+
+        $currentSheet = $PHPExcel->getSheet(0); // 拿到第一个sheet（工作簿？）
+
+        $content = $currentSheet->toArray('', true, true);
+
+        $allColumn = $currentSheet->getHighestColumn(); // 最高的列，比如AU. 列从A开始
+
+        $highestRow = $currentSheet->getHighestRow(); // 取得总行数
+
+        $highestColumn = $currentSheet->getHighestColumn(); // 取得总列数
+
+        echo "<pre>";
+        print_r($content);
     }
 
     /**
