@@ -65,9 +65,8 @@ class SiteController extends Controller
     }
 
 
-    public function actionTest($id){
-        $PHPexcel = new phpexcel();
-        echo $id;
+    public function actionTest(){
+        //$PHPexcel = new phpexcel();
         echo 'test';
     }
 
