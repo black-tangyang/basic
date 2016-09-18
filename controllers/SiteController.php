@@ -67,6 +67,7 @@ class SiteController extends Controller
 
     public function actionTest(){
         $phpexcel = new PHPExcel();
+        var_dump($phpexcel);
         echo 'test';
     }
 
