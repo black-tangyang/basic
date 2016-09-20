@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\FlightCabinModel;
 use app\models\YiiModel;
 use yii;
 use yii\filters\AccessControl;
@@ -99,6 +100,11 @@ class SiteController extends Controller
 
         echo "<pre>";
         print_r($content);
+
+        $model = new FlightCabinModel();
+        $result = $model->find()->asArray()->all();
+        var_dump($result);
+        exit;
     }
 
     /**
