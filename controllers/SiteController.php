@@ -111,12 +111,21 @@ class SiteController extends Controller
                 if($v == ''){
                     break;
                 }
-                $arr[] =array(
-                    'airline_code' => $airline_code,
-                    'cabin_code' => $content[$i+1][$k],
-                    'cabin_name' => $content[$i][$k],
-                    'cabin_discount' => $content[$i+2][$k] == ''?1: $content[$i+2][$k]*0.01,
-                );
+                if($content[$i+2][$k] == 70){
+                    $arr[] = array(
+                        'airline_code' => $airline_code,
+                        'cabin_code' => $content[$i + 1][$k],
+                        'cabin_name' => $content[$i][$k],
+                        'cabin_discount' => 0.07,
+                    );
+                }else {
+                    $arr[] = array(
+                        'airline_code' => $airline_code,
+                        'cabin_code' => $content[$i + 1][$k],
+                        'cabin_name' => $content[$i][$k],
+                        'cabin_discount' => $content[$i + 2][$k] == '' ? 1 : $content[$i + 2][$k] * 0.01,
+                    );
+                }
             }
             $i=$i+3;
         }
