@@ -116,7 +116,7 @@ class SiteController extends Controller
                         'airline_code' => $airline_code,
                         'cabin_code' => $content[$i + 1][$k],
                         'cabin_name' => $content[$i][$k],
-                        'cabin_discount' => 0.07,
+                        'cabin_discount' => 0.7,
                     );
                 }else {
                     $arr[] = array(
