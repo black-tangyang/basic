@@ -99,11 +99,32 @@ class SiteController extends Controller
         $highestColumn = $currentSheet->getHighestColumn(); // 取得总列数
 
         echo "<pre>";
-        print_r($content);
+        //print_r($content);
 
-        $model = new FlightCabinModel();
+
+        for($i=1;$i<87;){
+            $airline_code = $content[$i][0];
+            foreach($content[$i] as $k=>$v){
+                if($k == 0 || $k == 1){
+                    continue;
+                }
+                if($k == ''){
+                    break;
+                }
+                $arr[] =array(
+                    'airline_code' => $airline_code,
+                    'cabin_code' => $content[$i+1][$k],
+                    'cabin_name' => $content[$i][$k],
+                    'cabin_discount' => $content[$i+2][$k] == ''?1: $content[$i+2][$k]*0.01,
+                );
+            }
+            $i=$i+3;
+        }
+        print_r($arr);
+
+        /*$model = new FlightCabinModel();
         $result = $model->find()->asArray()->all();
-        var_dump($result);
+        var_dump($result);*/
         exit;
     }
 
