@@ -20,7 +20,7 @@ class FlightCabinModel extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'flight_rules';
+        return 'flight_cabin_info';
     }
 
 }
