@@ -99,7 +99,7 @@ class SiteController extends Controller
         $highestColumn = $currentSheet->getHighestColumn(); // 取得总列数
 
         echo "<pre>";
-        //print_r($content);
+        print_r($content);
 
 
         for($i=1;$i<87;){
@@ -120,7 +120,6 @@ class SiteController extends Controller
             }
             $i=$i+3;
         }
-        print_r($arr);
 
         /*$model = new FlightCabinModel();
         $result = $model->find()->asArray()->all();
