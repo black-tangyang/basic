@@ -139,7 +139,7 @@ class SiteController extends Controller
             $model->setAttributes($value);
             $result = $model->save();
             if(!$result){
-                echo '报错'
+                echo '报错';
                 exit;
             }
         }
