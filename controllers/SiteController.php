@@ -134,6 +134,16 @@ class SiteController extends Controller
         /*$model = new FlightCabinModel();
         $result = $model->find()->asArray()->all();
         var_dump($result);*/
+        foreach($arr as $key=>$value){
+            $model = new FlightCabinModel();
+            $model->setAttributes($value);
+            $result = $model->save();
+            if(!$result){
+                echo '报错'
+                exit;
+            }
+        }
+
         exit;
     }
 
