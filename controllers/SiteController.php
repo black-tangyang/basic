@@ -108,7 +108,7 @@ class SiteController extends Controller
                 if($k == 0 || $k == 1){
                     continue;
                 }
-                if($k == ''){
+                if($v == ''){
                     break;
                 }
                 $arr[] =array(
