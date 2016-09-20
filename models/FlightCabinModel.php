@@ -23,4 +23,9 @@ class FlightCabinModel extends ActiveRecord
         return 'flight_cabin_info';
     }
 
+    public function rules(){
+        return [
+            [['airline_code','cabin_code','cabin_name','cabin_discount'],'required','message'=>'参数为空']
+        ];
+    }
 }
