@@ -196,6 +196,8 @@ class SiteController extends Controller
         curl_setopt($ch, CURLOPT_BINARYTRANSFER, true) ; // 在启用 CURLOPT_RETURNTRANSFER 时候将获取数据返回
         curl_setopt ($ch, CURLOPT_POSTFIELDS,$data);
         $output = curl_exec($ch);
+        var_dump($output);
+        exit;
         $json_str=json_decode($output,true);
         /*return access_token*/
         return $json_str;
@@ -206,8 +208,6 @@ class SiteController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true) ; // 获取数据返回
         curl_setopt($ch, CURLOPT_BINARYTRANSFER, true) ; // 在启用 CURLOPT_RETURNTRANSFER 时候将获取数据返回
         $output = curl_exec($ch) ;
-        var_dump($output);
-        exit;
         $json_str=json_decode($output,true);
         /*return access_token*/
         return $json_str;
