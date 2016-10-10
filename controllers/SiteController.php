@@ -41,10 +41,9 @@ class SiteController extends Controller
         }*/
 
         $value = json_encode($_POST);
-        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
 
         $path = './test.txt';
-        $str = $postStr;
+        $str = $value;
         file_put_contents($path,$str,FILE_APPEND);
 
     }
