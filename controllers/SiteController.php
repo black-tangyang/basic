@@ -183,8 +183,6 @@ class SiteController extends Controller
 
 
         $menu_url="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$access_token;
-        echo 'ok';
-        exit;
 
         return $this->postcurl($menu_url,$data);
 
