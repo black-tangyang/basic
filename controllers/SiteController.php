@@ -184,7 +184,7 @@ class SiteController extends Controller
 
         $menu_url="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$access_token;
 
-        return $this->postcurl($menu_url,$data);
+        var_dump($this->postcurl($menu_url,$data));
 
     }
 
@@ -196,8 +196,6 @@ class SiteController extends Controller
         curl_setopt($ch, CURLOPT_BINARYTRANSFER, true) ; // 在启用 CURLOPT_RETURNTRANSFER 时候将获取数据返回
         curl_setopt ($ch, CURLOPT_POSTFIELDS,$data);
         $output = curl_exec($ch);
-        var_dump($output);
-        exit;
         $json_str=json_decode($output,true);
         /*return access_token*/
         return $json_str;
