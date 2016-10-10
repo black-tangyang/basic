@@ -40,8 +40,11 @@ class SiteController extends Controller
             exit;
         }*/
 
+        $value = json_encode($_POST);
+
+
         $path = './test.txt';
-        $str = 'test sh';
+        $str = $value;
         file_put_contents($path,$str,FILE_APPEND);
 
     }
@@ -49,7 +52,7 @@ class SiteController extends Controller
     private function checkSignature()
     {
         // you must define TOKEN by yourself
-        if (!defined("TOKEN")) {
+             if (!defined("TOKEN")) {
             throw new Exception('TOKEN is not defined!');
         }
 
