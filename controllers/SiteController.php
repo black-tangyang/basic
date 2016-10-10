@@ -48,7 +48,7 @@ class SiteController extends Controller
         }
         else
         {
-            $this->responseMsgAction();
+            $this->responseMsg();
         }
         return FALSE;
 
