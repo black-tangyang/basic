@@ -126,6 +126,89 @@ class SiteController extends Controller
     }
 
 
+    public function get_access_token(){
+        $cache=Yii::$app->cache;
+        $app_id="wx6d4011b25c627418";
+        $APPSECRET="510aaad587b0f8f5fd45a5f573bd8620 ";
+        $url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$app_id."&secret=".$APPSECRET;
+        $access_token=$cache->get("access_token");
+        if($access_token){
+            return $access_token;
+        }else{
+            $access_token=$this->getcurl($url);
+            $cache->set("access_token",$access_token['access_token'],3600);
+            return $access_token['access_token'];
+        }
+
+    }
+
+
+    /*创建自定义菜单*/
+    public  function actionCreatemenu(){
+        $access_token=$this->get_access_token();
+        $app_id="wx2a1eb5569491d153";
+        $url=urlencode("http://maitian.codexueyuan.com/index.php?r=site/call_back");
+        $data = '{
+             "button":[
+              {
+                   "name":"任务",
+                   "type":"view",
+                    "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$app_id.'&redirect_uri='.$url.'&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect"
+
+               },
+                  {
+                       "name": "会员中心",
+                        "sub_button": [
+                            {
+                                "type": "view",
+                                "name": "当团长",
+                                "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$app_id.'&redirect_uri='.$url.'&response_type=code&scope=snsapi_userinfo&state=2#wechat_redirect"
+
+                            },
+                            {
+                                "type": "view",
+                                "name": "个人中心",
+                                "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$app_id.'&redirect_uri='.$url.'&response_type=code&scope=snsapi_userinfo&state=3#wechat_redirect"
+
+                            }
+                        ]
+
+                   }
+
+               ]
+         }';
+
+
+        $menu_url="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$access_token;
+
+        return $this->postcurl($menu_url,$data);
+
+    }
+
+
+    /*curl-post调用方法*/
+    public function postcurl($url,$data){
+        $ch=curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true) ; // 获取数据返回
+        curl_setopt($ch, CURLOPT_BINARYTRANSFER, true) ; // 在启用 CURLOPT_RETURNTRANSFER 时候将获取数据返回
+        curl_setopt ($ch, CURLOPT_POSTFIELDS,$data);
+        $output = curl_exec($ch);
+        $json_str=json_decode($output,true);
+        /*return access_token*/
+        return $json_str;
+    }
+    /*curl-get调用方法*/
+    public  function getcurl($url){
+        $ch=curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true) ; // 获取数据返回
+        curl_setopt($ch, CURLOPT_BINARYTRANSFER, true) ; // 在启用 CURLOPT_RETURNTRANSFER 时候将获取数据返回
+        $output = curl_exec($ch) ;
+        $json_str=json_decode($output,true);
+        /*return access_token*/
+        return $json_str;
+    }
+
+
     public function actionTest(){
         $filePath = __DIR__."/test.xlsx"; // 要读取的文件的路径
 
