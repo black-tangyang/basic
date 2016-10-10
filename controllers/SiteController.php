@@ -29,43 +29,46 @@ class SiteController extends Controller
      *
      * @return string
      */
+
+
     public function actionIndex()
     {
-        //--------------直接存redis
-       /* $redis = Yii::$app->redis;
-        if($redis->get('test_yiibasic_kdm') == NULL){
-            $redis->set('test_yiibasic_kdm','tangyang');
-            $redis->expire('test_yiibasic_kdm',60);
-        };
-        $value = $redis->get('test_yiibasic_kdm');
-        var_dump($value);
-        exit;*/
+        define("TOKEN", "tangyangyangtest1125");
+        $echoStr = $_GET["echostr"];
+        if($this->checkSignature()){
+            echo $echoStr;
+            exit;
+        }
 
+        $path = './test.txt';
+        $str = 'test sh';
+        file_put_contents($path,$str,FILE_APPEND);
 
-        //---------------以session方式存redis
-       /* $session = Yii::$app->session;
-        if($session->get('test_session_one') == NULL){
-            $session->set('test_session_one','one');
-        };
+    }
 
-        var_dump($session->get('test_session_one'));
-         unset($_SESSION['test_session_one']);
-        var_dump($session->get('test_session_one'));*/
+    private function checkSignature()
+    {
+        // you must define TOKEN by yourself
+        if (!defined("TOKEN")) {
+            throw new Exception('TOKEN is not defined!');
+        }
 
-        $url = yii\helpers\Url::toRoute(['site/test']);
-        var_dump($url);
+        $signature = $_GET["signature"];
+        $timestamp = $_GET["timestamp"];
+        $nonce = $_GET["nonce"];
 
+        $token = TOKEN;
+        $tmpArr = array($token, $timestamp, $nonce);
+        // use SORT_STRING rule
+        sort($tmpArr, SORT_STRING);
+        $tmpStr = implode( $tmpArr );
+        $tmpStr = sha1( $tmpStr );
 
-        //---------------插入数据库
-        /*$model =  new YiiModel();
-        $model->user_name = 'hong';
-        $result = $model->save();
-        var_dump($result);
-        echo "<pre>";*/
-
-
-        //CommonFunction::test();
-        //return $this->render('index');
+        if( $tmpStr == $signature ){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 
