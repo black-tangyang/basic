@@ -34,11 +34,11 @@ class SiteController extends Controller
     public function actionIndex()
     {
         define("TOKEN", "tangyangyangtest1125");
-        $echoStr = $_GET["echostr"];
+        /*$echoStr = $_GET["echostr"];
         if($this->checkSignature()){
             echo $echoStr;
             exit;
-        }
+        }*/
 
         $path = './test.txt';
         $str = 'test sh';
