@@ -146,8 +146,8 @@ class SiteController extends Controller
     /*创建自定义菜单*/
     public  function actionCreatemenu(){
         $access_token=$this->get_access_token();
-        echo $access_token;
-        exit;
+      /*  echo $access_token;
+        exit;*/
 
         $app_id="wx6d4011b25c627418";
         $url=urlencode("http://maitian.codexueyuan.com/index.php?r=site/call_back");
@@ -183,6 +183,8 @@ class SiteController extends Controller
 
 
         $menu_url="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$access_token;
+        echo 'ok';
+        exit;
 
         return $this->postcurl($menu_url,$data);
 
