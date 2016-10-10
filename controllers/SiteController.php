@@ -146,7 +146,8 @@ class SiteController extends Controller
     /*创建自定义菜单*/
     public  function actionCreatemenu(){
         $access_token=$this->get_access_token();
-        $app_id="wx2a1eb5569491d153";
+
+        $app_id="wx6d4011b25c627418";
         $url=urlencode("http://maitian.codexueyuan.com/index.php?r=site/call_back");
         $data = '{
              "button":[
