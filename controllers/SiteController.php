@@ -41,7 +41,7 @@ class SiteController extends Controller
             $echoStr = $_GET["echostr"];
 
             //valid signature , option
-            if($this->checkSignatureAction())
+            if($this->checkSignature())
             {
                 echo $echoStr;
                 exit;
