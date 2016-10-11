@@ -33,6 +33,8 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        echo '';
+        exit;
         define("TOKEN", "tangyangyangtest1125");
 
         if(isset($_GET['echostr']))
@@ -50,14 +52,12 @@ class SiteController extends Controller
         {
             $this->responseMsg();
         }
-        return FALSE;
-
-
         $value = json_encode($_POST);
 
         $path = './test.txt';
         $str = $value;
         file_put_contents($path,$str,FILE_APPEND);
+        return FALSE;
 
     }
 
