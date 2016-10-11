@@ -34,7 +34,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        define("TOKEN", "tangyangyangtest112521312");
+        define("TOKEN", "tang");
 
         if(isset($_GET['echostr']))
         {
@@ -129,8 +129,8 @@ class SiteController extends Controller
 
     public function get_access_token(){
         $cache=Yii::$app->cache;
-        $app_id="wx6d4011b25c627418";
-        $APPSECRET="510aaad587b0f8f5fd45a5f573bd8620 ";
+        $app_id="wxaf58d9ec0390e62d";
+        $APPSECRET="eeff12f9a3ea747b5a2912fa23345fdb ";
         $url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$app_id."&secret=".$APPSECRET;
         $access_token=$cache->get("access_token");
         if($access_token){
@@ -150,7 +150,7 @@ class SiteController extends Controller
       /*  echo $access_token;
         exit;*/
 
-        $app_id="wx6d4011b25c627418";
+        $app_id="wxaf58d9ec0390e62d";
         $url=urlencode("http://maitian.codexueyuan.com/index.php?r=site/call_back");
         $data = '{
              "button":[
