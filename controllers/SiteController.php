@@ -33,8 +33,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        echo '';
-        exit;
+
         define("TOKEN", "tangyangyangtest1125");
 
         if(isset($_GET['echostr']))
@@ -50,6 +49,8 @@ class SiteController extends Controller
         }
         else
         {
+            echo '';
+            exit;
             $this->responseMsg();
         }
         $value = json_encode($_POST);
