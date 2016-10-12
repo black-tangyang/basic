@@ -62,7 +62,10 @@ class SiteController extends Controller
     public function responseMsg()
     {
         //get post data, May be due to the different environments
-        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+        //$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+
+        $postStr = file_get_contents("php://input");
+
         $path = './test.txt';
         $str = $postStr;
         file_put_contents($path,$str,FILE_APPEND);
