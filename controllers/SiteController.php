@@ -34,7 +34,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        define("TOKEN", "tang");
+        define("TOKEN", "tangyangyangtest112521312");
 
         if(isset($_GET['echostr']))
         {
