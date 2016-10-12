@@ -83,6 +83,31 @@ class SiteController extends Controller
             $keyword = trim($postObj->Content);
             $time = time();
 
+            $textTpl = "<xml>
+                          <ToUserName><![CDATA[%s]]></ToUserName>
+                          <FromUserName><![CDATA[%s]]></FromUserName>
+                          <CreateTime>%s</CreateTime>
+                          <MsgType><![CDATA[%s]]></MsgType>
+                          <ArticleCount>1</ArticleCount>
+                          <Articles>
+                          <item>
+                          <Title><![CDATA[%s]]></Title>
+                          <Description><![CDATA[%s]]></Description>
+                          <PicUrl><![CDATA[%s]]></PicUrl>
+                          <Url><![CDATA[%s]]></Url>
+                          </item>
+                          </Articles>
+                          </xml>";
+            $msgType = "image";
+            $Title = '测试题目';
+            $Description = '测试题目的一些描述';
+            $PicUrl = 'http://qiniu.codexueyuan.com/FiMhaujau9l52xIDjn9_a5A7lmbj';
+            $Url = 'www.baidu.com';
+
+            $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title,$Description,$PicUrl,$Url);
+            echo $resultStr;
+            exit;
+
             if ($info_type == 'text') {
                 $textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
