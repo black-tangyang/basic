@@ -34,7 +34,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        define("TOKEN", "tangyangyangtest112521312");
+        define("TOKEN", "tang");
 
         if(isset($_GET['echostr']))
         {
@@ -82,6 +82,11 @@ class SiteController extends Controller
             $info_type = $postObj->MsgType;
             $keyword = trim($postObj->Content);
             $time = time();
+            $msgType = "image";
+            $Title = '测试题目';
+            $Description = '测试题目的一些描述';
+            $PicUrl = 'http://qiniu.codexueyuan.com/FiMhaujau9l52xIDjn9_a5A7lmbj';
+            $Url = 'www.baidu.com';
 
             $textTpl = "<xml>
                           <ToUserName><![CDATA[%s]]></ToUserName>
@@ -97,14 +102,11 @@ class SiteController extends Controller
                           <Url><![CDATA[%s]]></Url>
                           </item>
                           </Articles>
+                          <FuncFlag>0</FuncFlag>
                           </xml>";
-            $msgType = "image";
-            $Title = '测试题目';
-            $Description = '测试题目的一些描述';
-            $PicUrl = 'http://qiniu.codexueyuan.com/FiMhaujau9l52xIDjn9_a5A7lmbj';
-            $Url = 'www.baidu.com';
 
-            $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title,$Description,$PicUrl,$Url);
+
+            $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title, $Description, $PicUrl, $Url);
             echo $resultStr;
             exit;
 
