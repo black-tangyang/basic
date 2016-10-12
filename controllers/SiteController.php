@@ -94,7 +94,7 @@ class SiteController extends Controller
 							<FuncFlag>0</FuncFlag>
 							</xml>";
                     $msgType = "text";
-                    $contentStr = 'www.baidu.com';
+                    $contentStr = $keyword;
                     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                     echo $resultStr;
                 }elseif($info_type == 'image'){
@@ -105,6 +105,22 @@ class SiteController extends Controller
 							<MsgType>><![CDATA[%s]]></MsgType>
 							<Image><MediaId><![CDATA[%s]]></MediaId></Image>
 							</xml>";
+
+                    $textTpl2 = "<xml>
+                          <ToUserName><![CDATA[%s]]></ToUserName>
+                          <FromUserName><![CDATA[%s]]></FromUserName>
+                          <CreateTime>%s</CreateTime>
+                          <MsgType><![CDATA[%s]]></MsgType>
+                          <ArticleCount>1</ArticleCount>
+                          <Articles>
+                          <item>
+                          <Title><![CDATA[%s]]></Title>
+                          <Description><![CDATA[%s]]></Description>
+                          <PicUrl><![CDATA[%s]]></PicUrl>
+                          <Url><![CDATA[%s]]></Url>
+                          </item>
+                          </Articles>
+                          </xml>";
                     $msgType = "image";
 
                     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, '2342314');
