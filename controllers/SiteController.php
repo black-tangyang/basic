@@ -23,6 +23,7 @@ use PHPExcel_Reader_Excel5;
 class SiteController extends Controller
 {
 
+    public $enableCsrfValidation = false;
 
     /**
      * Displays homepage.
