@@ -89,6 +89,19 @@ class SiteController extends Controller
             $Url = 'www.baidu.com';
 
             $textTpl = "<xml>
+							<ToUserName><![CDATA[%s]]></ToUserName>
+							<FromUserName><![CDATA[%s]]></FromUserName>
+							<CreateTime>%s</CreateTime>
+							<MsgType><![CDATA[%s]]></MsgType>
+							<Content><![CDATA[%s]]></Content>
+							<FuncFlag>0</FuncFlag>
+							</xml>";
+            $msgType = "text";
+            $contentStr = $keyword;
+            $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+            echo $resultStr;
+
+           /* $textTpl = "<xml>
                           <ToUserName><![CDATA[%s]]></ToUserName>
                           <FromUserName><![CDATA[%s]]></FromUserName>
                           <CreateTime>%s</CreateTime>
@@ -108,7 +121,7 @@ class SiteController extends Controller
 
             $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title, $Description, $PicUrl, $Url);
             echo $resultStr;
-            exit;
+            exit;*/
 
             if ($info_type == 'text') {
                 $textTpl = "<xml>
