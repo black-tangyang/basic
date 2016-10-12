@@ -86,7 +86,7 @@ class SiteController extends Controller
             $Title = '测试题目';
             $Description = '测试题目的一些描述';
             $PicUrl = 'http://qiniu.codexueyuan.com/FiMhaujau9l52xIDjn9_a5A7lmbj';
-            $Url = 'www.baidu.com';
+            $Url = 'www.tangyangyang.top/index.php?r=site/test_info';
 
             /*$textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
@@ -420,5 +420,10 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+
+    public function actionTest_info(){
+        echo '你好，傻逼！';
     }
 }
