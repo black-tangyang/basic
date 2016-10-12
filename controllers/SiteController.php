@@ -79,9 +79,13 @@ class SiteController extends Controller
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
             $fromUsername = $postObj->FromUserName;
             $toUsername = $postObj->ToUserName;
+            $info_type = $postObj->MsgType;
             $keyword = trim($postObj->Content);
             $time = time();
-            $textTpl = "<xml>
+            if(!empty( $keyword ))
+            {
+                if($info_type == 'text') {
+                    $textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
 							<CreateTime>%s</CreateTime>
@@ -89,12 +93,23 @@ class SiteController extends Controller
 							<Content><![CDATA[%s]]></Content>
 							<FuncFlag>0</FuncFlag>
 							</xml>";
-            if(!empty( $keyword ))
-            {
-                $msgType = "text";
-                    $contentStr = $keyword;
-                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                echo $resultStr;
+                    $msgType = "text";
+                    $contentStr = 'www.baidu.com';
+                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                    echo $resultStr;
+                }elseif($info_type == 'image'){
+                    $textTpl = "<xml>
+							<ToUserName><![CDATA[%s]]></ToUserName>
+							<FromUserName><![CDATA[%s]]></FromUserName>
+							<CreateTime>%s</CreateTime>
+							<MsgType>><![CDATA[%s]]></MsgType>
+							<Image><MediaId><![CDATA[%s]]></MediaId></Image>
+							</xml>";
+                    $msgType = "image";
+
+                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, '2342314');
+                    echo $resultStr;
+                }
             }else{
                 echo "Input something...";
             }
