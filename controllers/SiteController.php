@@ -72,7 +72,7 @@ class SiteController extends Controller
         file_put_contents($path,$str,FILE_APPEND);
 
         //extract post data
-        if (!empty($postStr)){
+        if (!empty($postStr)) {
             /* libxml_disable_entity_loader is to prevent XML eXternal Entity Injection,
                the best way is to check the validity of xml by yourself */
             libxml_disable_entity_loader(true);
@@ -82,10 +82,9 @@ class SiteController extends Controller
             $info_type = $postObj->MsgType;
             $keyword = trim($postObj->Content);
             $time = time();
-            if(!empty( $keyword ))
-            {
-                if($info_type == 'text') {
-                    $textTpl = "<xml>
+
+            if ($info_type == 'text') {
+                $textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
 							<CreateTime>%s</CreateTime>
@@ -93,20 +92,20 @@ class SiteController extends Controller
 							<Content><![CDATA[%s]]></Content>
 							<FuncFlag>0</FuncFlag>
 							</xml>";
-                    $msgType = "text";
-                    $contentStr = $keyword;
-                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                    echo $resultStr;
-                }elseif($info_type == 'image'){
-                    $textTpl = "<xml>
+                $msgType = "text";
+                $contentStr = $keyword;
+                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                echo $resultStr;
+            } elseif ($info_type == 'image') {
+              /*  $textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
 							<CreateTime>%s</CreateTime>
 							<MsgType>><![CDATA[%s]]></MsgType>
 							<Image><MediaId><![CDATA[%s]]></MediaId></Image>
-							</xml>";
+							</xml>";*/
 
-                    $textTpl2 = "<xml>
+                $textTpl = "<xml>
                           <ToUserName><![CDATA[%s]]></ToUserName>
                           <FromUserName><![CDATA[%s]]></FromUserName>
                           <CreateTime>%s</CreateTime>
@@ -121,18 +120,15 @@ class SiteController extends Controller
                           </item>
                           </Articles>
                           </xml>";
-                    $msgType = "image";
+                $msgType = "image";
+                $Title = '测试题目';
+                $Description = '测试题目的一些描述';
+                $PicUrl = 'http://qiniu.codexueyuan.com/FiMhaujau9l52xIDjn9_a5A7lmbj';
+                $Url = 'www.baidu.com';
 
-                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, '2342314');
-                    echo $resultStr;
-                }
-            }else{
-                echo "Input something...";
+                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title,$Description,$PicUrl,$Url);
+                echo $resultStr;
             }
-
-        }else {
-            echo "";
-            exit;
         }
     }
 
