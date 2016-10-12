@@ -88,7 +88,7 @@ class SiteController extends Controller
             $PicUrl = 'http://qiniu.codexueyuan.com/FiMhaujau9l52xIDjn9_a5A7lmbj';
             $Url = 'www.baidu.com';
 
-            $textTpl = "<xml>
+            /*$textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
 							<CreateTime>%s</CreateTime>
@@ -99,9 +99,10 @@ class SiteController extends Controller
             $msgType = "text";
             $contentStr = $keyword;
             $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-            echo $resultStr;
+            echo $resultStr;*/
 
-           /* $textTpl = "<xml>
+            $msgType = "news";
+            $textTpl = "<xml>
                           <ToUserName><![CDATA[%s]]></ToUserName>
                           <FromUserName><![CDATA[%s]]></FromUserName>
                           <CreateTime>%s</CreateTime>
@@ -115,13 +116,12 @@ class SiteController extends Controller
                           <Url><![CDATA[%s]]></Url>
                           </item>
                           </Articles>
-                          <FuncFlag>0</FuncFlag>
                           </xml>";
 
 
             $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title, $Description, $PicUrl, $Url);
             echo $resultStr;
-            exit;*/
+            exit;
 
             if ($info_type == 'text') {
                 $textTpl = "<xml>
