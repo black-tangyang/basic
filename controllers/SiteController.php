@@ -92,11 +92,7 @@ class SiteController extends Controller
             if(!empty( $keyword ))
             {
                 $msgType = "text";
-                if($keyword == '你好'){
-                    $contentStr = "你好!";
-                }else{
-                    $contentStr = "Welcome to wechat world!";
-                }
+                    $contentStr = $keyword;
                 $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 echo $resultStr;
             }else{
