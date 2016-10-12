@@ -63,6 +63,9 @@ class SiteController extends Controller
     {
         //get post data, May be due to the different environments
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+        $path = './test.txt';
+        $str = $postStr;
+        file_put_contents($path,$str,FILE_APPEND);
 
         //extract post data
         if (!empty($postStr)){
