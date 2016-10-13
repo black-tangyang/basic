@@ -82,46 +82,6 @@ class SiteController extends Controller
             $info_type = $postObj->MsgType;
             $keyword = trim($postObj->Content);
             $time = time();
-            $msgType = "image";
-            $Title = '测试题目';
-            $Description = '测试题目的一些描述';
-            $PicUrl = 'http://qiniu.codexueyuan.com/FiMhaujau9l52xIDjn9_a5A7lmbj';
-            $Url = 'www.tangyangyang.top/index.php?r=site/test_info';
-
-            /*$textTpl = "<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							<FuncFlag>0</FuncFlag>
-							</xml>";
-            $msgType = "text";
-            $contentStr = $keyword;
-            $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-            echo $resultStr;*/
-
-            $msgType = "news";
-            $textTpl = "<xml>
-                          <ToUserName><![CDATA[%s]]></ToUserName>
-                          <FromUserName><![CDATA[%s]]></FromUserName>
-                          <CreateTime>%s</CreateTime>
-                          <MsgType><![CDATA[%s]]></MsgType>
-                          <ArticleCount>1</ArticleCount>
-                          <Articles>
-                          <item>
-                          <Title><![CDATA[%s]]></Title>
-                          <Description><![CDATA[%s]]></Description>
-                          <PicUrl><![CDATA[%s]]></PicUrl>
-                          <Url><![CDATA[%s]]></Url>
-                          </item>
-                          </Articles>
-                          </xml>";
-
-
-            $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title, $Description, $PicUrl, $Url);
-            echo $resultStr;
-            exit;
 
             if ($info_type == 'text') {
                 $textTpl = "<xml>
@@ -136,14 +96,8 @@ class SiteController extends Controller
                 $contentStr = $keyword;
                 $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 echo $resultStr;
+                exit;
             } elseif ($info_type == 'image') {
-              /*  $textTpl = "<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType>><![CDATA[%s]]></MsgType>
-							<Image><MediaId><![CDATA[%s]]></MediaId></Image>
-							</xml>";*/
 
                 $textTpl = "<xml>
                           <ToUserName><![CDATA[%s]]></ToUserName>
@@ -160,14 +114,19 @@ class SiteController extends Controller
                           </item>
                           </Articles>
                           </xml>";
-                $msgType = "image";
+
+                $msgType = "news";
                 $Title = '测试题目';
                 $Description = '测试题目的一些描述';
                 $PicUrl = 'http://qiniu.codexueyuan.com/FiMhaujau9l52xIDjn9_a5A7lmbj';
-                $Url = 'www.baidu.com';
+                $Url = 'www.tangyangyang.top/index.php?r=site/test_info';
 
-                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title,$Description,$PicUrl,$Url);
+                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $Title, $Description, $PicUrl, $Url);
                 echo $resultStr;
+                exit;
+            }else{
+                echo '';
+                exit;
             }
         }
     }
