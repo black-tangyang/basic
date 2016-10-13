@@ -197,6 +197,14 @@ class SiteController extends Controller
         }
     }
 
+    public function get_user_info($penid){
+        $token = $this->get_access_token();
+        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$token.'&openid='.$penid.'&lang=zh_CN';
+        $result = $this->getcurl($url);
+        $arr = json_decode($result,true);
+        return $arr;
+    }
+
 
     public function get_access_token(){
         $cache=Yii::$app->cache;
@@ -425,5 +433,11 @@ class SiteController extends Controller
 
     public function actionTest_info(){
         echo '你好，傻逼！';
+    }
+
+    public function actionTest_user(){
+        $arr = $this->get_user_info('oP0zzvlgBfRK3DoxCSf21119x11I');
+        echo "<pre>";
+        print_r($arr);
     }
 }
