@@ -201,6 +201,8 @@ class SiteController extends Controller
         $token = $this->get_access_token();
         $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$token.'&openid='.$penid.'&lang=zh_CN';
         $result = $this->getcurl($url);
+        var_dump($result);
+        exit;
         $arr = json_decode($result,true);
         return $arr;
     }
