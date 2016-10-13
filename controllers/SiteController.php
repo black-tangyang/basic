@@ -397,7 +397,7 @@ class SiteController extends Controller
     }
 
     public function actionTest_user(){
-        $arr = $this->get_user_info('oP0zzvlgBfRK3DoxCSf21119x11I');
+        $arr = $this->get_user_info('oYqTAvypUqkovHGFHe7Xsjn4exNo');
         echo "<pre>";
         print_r($arr);
     }
