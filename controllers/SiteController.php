@@ -35,6 +35,9 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
+        $this->redirect(yii\helpers\Url::toRoute(['site/test_info']));
+        exit;
+
         define("TOKEN", "tang");
 
         if(isset($_GET['echostr']))
