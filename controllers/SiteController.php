@@ -35,11 +35,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        echo time();
-        echo "<pre>";
-        echo date('Y-m-d H:i:s');
-        exit;
-
         define("TOKEN", "tang");
 
         if(isset($_GET['echostr']))
