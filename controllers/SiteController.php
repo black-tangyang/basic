@@ -35,7 +35,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        $url = 'www.tangyangyang.top/index.php?r=site/test_info';
+        $url = 'http://www.tangyangyang.top/index.php?r=site/test_info';
         $this->redirect($url);
         exit;
 
