@@ -35,7 +35,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        $this->redirect(yii\helpers\Url::toRoute(['site/test_info']));
+        $url = 'www.tangyangyang.top/index.php?r=site/test_info';
+        $this->redirect($url);
         exit;
 
         define("TOKEN", "tang");
