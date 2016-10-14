@@ -35,10 +35,9 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        echo '1';
-
+        
         $url = 'http://www.tangyangyang.top/index.php?r=site/test_info';
-        $this->redirect($url);
+        return $this->redirect($url);
         exit;
 
         define("TOKEN", "tang");
