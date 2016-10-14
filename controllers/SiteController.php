@@ -35,8 +35,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        
-        $url = 'http://www.tangyangyang.top/index.php?r=site/test_info';
+
+        $url = yii\helpers\Url::toRoute(['site/test_info']);//'http://www.tangyangyang.top/index.php?r=site/test_info';
         return $this->redirect($url);
         exit;
 
