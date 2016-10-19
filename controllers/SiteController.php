@@ -35,7 +35,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        var_dump($_SERVER);
+        echo "<pre>";
+        print_r($_SERVER);
         exit;
 
 
