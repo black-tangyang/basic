@@ -35,7 +35,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        var_dump($_POST);
+        var_dump($_SERVER);
         exit;
 
 
