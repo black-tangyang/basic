@@ -37,6 +37,10 @@ class SiteController extends Controller
 
         echo "<pre>";
         print_r($_SERVER);
+
+        preg_match("/^(http:\/\/)?([^\/]+)/i", $_SERVER['HTTP_REFERER'], $matches);
+        $host = $matches[2];
+        var_dump($host);
         exit;
 
 
