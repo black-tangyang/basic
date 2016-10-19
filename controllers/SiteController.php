@@ -34,7 +34,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        
+
 
         define("TOKEN", "tang");
 
