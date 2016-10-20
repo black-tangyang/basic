@@ -35,13 +35,18 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        echo "<pre>";
+        $id = $_REQUEST['id'];
+        var_dump($id);
+        exit;
+
+
+        /*echo "<pre>";
         print_r($_SERVER);
 
         preg_match("/^(http:\/\/)?([^\/]+)/i", $_SERVER['HTTP_REFERER'], $matches);
         $host = $matches[2];
         var_dump($host);
-        exit;
+        exit;*/
 
 
         define("TOKEN", "tang");
