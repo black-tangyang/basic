@@ -35,6 +35,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
+        echo __DIR__;
+        exit;
         $id = $_REQUEST['id'];
         var_dump($id);
         exit;
